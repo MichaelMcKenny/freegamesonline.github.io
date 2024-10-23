@@ -3827,9 +3827,9 @@ lastTapTime=-1E4;return"double-tap"}else{lastTapX=this._x;lastTapY=this._y;lastT
     }
 
     PreloadRewardedAd() {
-      this._preloadedAd = false;
+      this._preloadedAd = true;
 
-      var gdsdk = window["gdsdk"];
+      /* var gdsdk = window["gdsdk"];
       if (gdsdk !== "undefined" && gdsdk.preloadAd !== "undefined") {
         gdsdk
           .preloadAd("rewarded")
@@ -3837,20 +3837,21 @@ lastTapTime=-1E4;return"double-tap"}else{lastTapX=this._x;lastTapY=this._y;lastT
             this._preloadedAd = true;
           })
           .catch(error => {
-            this._preloadedAd = false;
+            this._preloadedAd = true;
           });
-      }
+      } */
     }
 
     ShowAd(adType) {
-      var gdsdk = window["gdsdk"];
+		this._preloadedAd = true;
+      /* var gdsdk = window["gdsdk"];
       if (gdsdk !== "undefined" && gdsdk.showAd !== "undefined") {
-        gdsdk.showAd(adType);
-
+        //gdsdk.showAd(adType);
+			this._preloadedAd = true;
         if (adType === "rewarded") {
-          this._preloadedAd = false;
+          this._preloadedAd = true;
         }
-      }
+      } */
     }
   };
 }
